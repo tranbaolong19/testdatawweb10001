@@ -10,7 +10,7 @@ import datetime
 app = Flask(__name__)
 
 # Lấy DATABASE_URL từ biến môi trường và kiểm tra định dạng
-database_url = "postgresql://user_player:U7Ic44CSFx6JaLLsal7fGCcsMdA5nixb@dpg-cvjlf13uibrs73ecgneg-a.oregon-postgres.render.com/user_player"
+database_url = os.getenv("DATABASE_URL")
 if not database_url:
     raise RuntimeError("❌ ERROR: DATABASE_URL is not set. Please check environment variables!")
 
@@ -100,3 +100,4 @@ except Exception as e:
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0", port=port)
+

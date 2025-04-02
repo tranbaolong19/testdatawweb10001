@@ -2,3 +2,6 @@ flask
 gunicorn
 psycopg2
 flask_sqlalchemy
+Werkzeug
+PyJWT
+python-dotenv
